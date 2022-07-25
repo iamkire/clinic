@@ -1,4 +1,5 @@
 <?php
+
 class Doctor
 {
     public $connect;
@@ -7,17 +8,18 @@ class Doctor
     {
         $this->connect = $connect;
     }
+
     public function create()
     {
-        try{
+        try {
             $password = 'doctor123';
 //            $encryptPass = password_hash($password,PASSWORD_DEFAULT);
-        $sql = "INSERT INTO users(email, password, user_type) 
+            $sql = "INSERT INTO users(email, password, user_type) 
                 VALUES('doctor@pabau.com','$password', 'doctor')";
-        $stmt= $this->connect->prepare($sql);
-        $stmt->execute();
+            $stmt = $this->connect->prepare($sql);
+            $stmt->execute();
             echo "Doctor email and password generated";
-        }catch(PDOException){
+        } catch (PDOException) {
         }
     }
 
@@ -32,12 +34,17 @@ class Doctor
 //                $_SESSION['isLogged'] = true;
 //            }
             if ($stmt->rowCount() > 0) {
+                $_SESSION['email'] = $_POST['email'];
+                $_SESSION['isLogged'] = true;
+
                 header('Location: ../views/index.php');
+            } elseif (empty($_POST['email']) && empty($_POST['password'])) {
+                echo 'Please fill out the fields';
             } else {
                 echo 'Invalid email or password';
             }
-        } catch (PDOException) {
-                echo 'An error occured';
+        } catch (PDOException $e) {
+            echo $e->getMessage();
         }
     }
 }

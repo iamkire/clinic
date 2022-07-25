@@ -1,12 +1,11 @@
 <?php
-include 'App/core/db.php';
+include 'environment/db.php';
 include 'App/QueryBuilder/Table.php';
 include 'App/QueryBuilder/Doctor.php';
 include 'App/QueryBuilder/Patient.php';
 include 'partials/header.php';
+include 'partials/navbar.php';
 include 'partials/footer.php';
-include 'Session/Security.php';
+include 'database/tables/create.php';
+include 'Session/Secure.php';
 
-$db = new Database;
-$qB = new Table($db->connect());
-$qB->create();

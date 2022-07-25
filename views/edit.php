@@ -1,7 +1,7 @@
 <?php
 include '../bootstrap.php';
-$db =  new Database();
-$patient = new Patient($db->connect());
+
+$patient = new Patient(Database::connect());
 $p = $patient->edit($_GET['id']);
 $patient->update($_GET['id']);
 
