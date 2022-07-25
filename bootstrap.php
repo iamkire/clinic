@@ -4,6 +4,8 @@ include 'App/QueryBuilder/Table.php';
 include 'App/QueryBuilder/Doctor.php';
 include 'partials/header.php';
 include 'partials/footer.php';
+include 'Session/Security.php';
+
 $db = new Database;
 $qB = new Table($db->connect());
 $qB->create();
