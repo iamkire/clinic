@@ -1,2 +1,2 @@
 <?php
-
+include 'bootstrap.php';
