@@ -27,19 +27,13 @@ class Patient
     {
         if (isset($_POST['update'])) {
 
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $phone_number = $_POST['phone_number'];
-            $address = $_POST['address'];
-            $medical_condition = $_POST['medical_condition'];
-            $blood_type = $_POST['blood_type'];
             $sql = "UPDATE users
-                SET name = '$name',
-                    email = '$email',
-                    phone_number = '$phone_number',
-                    address = '$address',
-                    medical_condition = '$medical_condition',
-                    blood_type = '$blood_type'
+                SET name = '".$_POST['name']."',
+                    email = '".$_POST['email']."',
+                    phone_number = '".$_POST['phone_number']."',
+                    address = '".$_POST['address']."',
+                    medical_condition = '".$_POST['medical_condition']."',
+                    blood_type = '".$_POST['blood_type']."'
                 WHERE id = '$id'";
             $stmt = $this->connect->prepare($sql);
             if ($stmt->execute()) {

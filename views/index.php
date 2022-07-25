@@ -18,13 +18,12 @@ $patient = new Patient($db->connect());
 
             <div class="flex flex-col gap-4 mt-4 sm:flex-row sm:mt-0 sm:items-center">
 
-
-                <button
+                <form action="../Auth/logout.php">
+                <input
                     class="block px-5 py-3 text-sm font-medium text-white transition bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring"
-                    type="button"
+                    type="submit" value="Log out"
                 >
-                    Log out
-                </button>
+                </form>
             </div>
         </div>
     </div>
