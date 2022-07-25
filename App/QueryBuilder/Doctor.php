@@ -25,6 +25,7 @@ class Doctor
 
     public function login()
     {
+        if(isset($_POST['submit']))
         try {
             $sql = "SELECT email,password FROM users WHERE email=? and password=?";
             $stmt = $this->connect->prepare($sql);
