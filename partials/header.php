@@ -8,4 +8,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
+<style>
+    table, th, td{
+        border:1px solid black;
+        padding: 5px;
+    }
+</style>
 <body>

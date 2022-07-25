@@ -12,8 +12,8 @@ class Doctor
         try{
             $password = 'doctor123';
 //            $encryptPass = password_hash($password,PASSWORD_DEFAULT);
-        $sql = "INSERT INTO users(email, password) 
-                VALUES('doctor@pabau.com','$password')";
+        $sql = "INSERT INTO users(email, password, user_type) 
+                VALUES('doctor@pabau.com','$password', 'doctor')";
         $stmt= $this->connect->prepare($sql);
         $stmt->execute();
             echo "Doctor email and password generated";
@@ -32,7 +32,7 @@ class Doctor
 //                $_SESSION['isLogged'] = true;
 //            }
             if ($stmt->rowCount() > 0) {
-                header('Location: ../views/patients.php');
+                header('Location: ../views/index.php');
             } else {
                 echo 'Invalid email or password';
             }
