@@ -1,3 +1,3 @@
 <?php
-$qB = new Table(Database::connect());
-$qB->create();
+$table = new Table(Database::connect());
+$table->create();

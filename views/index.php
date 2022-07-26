@@ -52,6 +52,6 @@ $patients = new Patient(Database::connect());
             <td><a href="edit.php?id=<?= $patient['id'] ?>">Edit</a></td>
             <td><a href="delete.php?id=<?= $patient['id'] ?>">Delete</a></td>
         </tr>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
     </table>
 </div>

@@ -1,7 +1,6 @@
 <?php
 include '../bootstrap.php';
 Secure::session();
-
 $doctor = new Doctor(Database::connect());
 $doctor->create();
 $doctor->login();

@@ -2,7 +2,7 @@
 
 class Doctor
 {
-    public $connect;
+    private $connect;
 
     public function __construct(PDO $connect)
     {

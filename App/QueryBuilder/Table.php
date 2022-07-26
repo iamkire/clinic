@@ -3,7 +3,7 @@
 
 class Table
 {
-    public $connect;
+    private $connect;
 
     public function __construct(PDO $connect)
     {
