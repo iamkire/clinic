@@ -39,7 +39,7 @@ class Doctor
                 $_SESSION['isLogged'] = true;
 
                 header('Location: ../views/index.php');
-            } elseif (empty($_POST['email']) && empty($_POST['password'])) {
+            } elseif (empty($_POST['email']) || empty($_POST['password'])) {
                 echo 'Please fill out the fields';
             } else {
                 echo 'Invalid email or password';
